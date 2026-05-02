@@ -7,7 +7,14 @@ import { usePathname } from "next/navigation";
 import { ModeToggle } from "./components/ModeToggle";
 import { CircleDashed } from 'lucide-react';
 import SplitText from "@/components/SplitText";
-
+import Image from "next/image";
+import Typing from "@/public/67Typing.png";
+import IndizGames from "@/public/IndizGames.png";
+import StocKing from "@/public/StocKing.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLink } from '@fortawesome/free-solid-svg-icons'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import Marquee from "@/components/Marquee"
 
 export default function Home() {
 
@@ -32,6 +39,12 @@ export default function Home() {
       { name: "About", path: "/About" },
       { name: "Contacts", path: "/Contacts" },
     ];
+
+    const skills = [
+   'MY SKILLS', 'MY SKILLS', 'MY SKILLS', 'MY SKILLS'
+]
+
+
 
   return (
     <div>
@@ -152,6 +165,40 @@ export default function Home() {
         </span>
       </div>
 
+    </section>
+
+    <section className="flex justify-between items-center m-5">
+
+      <div className="p-2 shadow-2xl rounded-lg text-center flex flex-col gap-2">
+         <Image src={Typing} alt="67Typing" className="w-100 h-60 hover:scale-105 duration-300 transform-transition rounded-2xl"/>
+         <div className="flex gap-6 justify-center">
+          <a href="https://67typing.vercel.app" target="_blank" rel="noopener noreferrer" className=" px-3 py-2 rounded-full hover:bg-gray-400 hover:text-white font-medium"> <FontAwesomeIcon icon={faLink} /> </a>
+         <a href="https://github.com/RohanChaulagain0777/Typing-Website.git" target="_blank" className=" px-3 py-2 rounded-full hover:bg-gray-400 hover:text-white font-medium"> <FontAwesomeIcon icon={faGithub} /> </a>
+         </div>
+      </div>
+
+      <div className="p-2 shadow-2xl rounded-lg text-center flex flex-col gap-2">
+         <Image src={StocKing} alt="StocKing" className="w-100 h-60 hover:scale-105 duration-300 transform-transition rounded-2xl"/>
+         
+         <div className="flex gap-6 justify-center">
+          <a href="https://stocking-app.vercel.app/" target="_blank" rel="noopener noreferrer" className=" px-3 py-2 rounded-full hover:bg-gray-400 hover:text-white font-medium"> <FontAwesomeIcon icon={faLink} /> </a>
+          <a href="https://github.com/RohanChaulagain0777/Stock-Market-Prediction-App.git" target="_blank" className=" px-3 py-2 rounded-full hover:bg-gray-400 hover:text-white font-medium"> <FontAwesomeIcon icon={faGithub} /> </a>
+         </div>
+
+      </div>
+
+      <div className="p-2 shadow-2xl rounded-lg text-center flex flex-col gap-2">
+         <Image src={IndizGames} alt="IndizGames" className="w-100 h-60 hover:scale-105 duration-300 transform-transition rounded-2xl"/>
+         <div className="flex justify-center">
+          <a href="https://github.com/RohanChaulagain0777/Game-Blog-App.git" target="_blank" className=" px-3 py-2 rounded-full hover:bg-gray-400 hover:text-white font-medium "> <FontAwesomeIcon icon={faGithub} /> </a>
+         </div>
+         
+      </div>
+    </section>
+
+    <section>
+
+      <Marquee items={skills} />
     </section>
     </div>
   );
